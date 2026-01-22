@@ -1,277 +1,327 @@
-# Wordpress-alt-text-generator
-When working with Wordpress, it can be a time-costly hassle to create alt-text for thousands of images manually. But with a simple python script, some insertable javascript, and a chrome extention, this can be done automatically! No hands! Runs on almost all systems! A huge timer saver.
+# 🖼️ WordPress Alt Text Generator
 
-#Only on windows
+Automatically generate alt text for **thousands of WordPress images** — hands free.
 
-1. Check if you have python and pip installed.
+This project uses:
 
-Open up 'Windows powershell'
+* 🐍 **Python** (AI image captioning server)
+* 🌐 **JavaScript** (runs in the browser console)
+* 🧩 **Chrome extension** (local CORS bypass)
 
-![alt text](image.png)
+⏱️ Huge time saver for large media libraries.
 
-If you see a terminal like this, you are doing perfect!
+---
 
-![alt text](image-1.png)
+## ⚠️ Platform Support
 
-Now type in 'python'
+> **Windows only**
 
-![alt text](image-2.png)
+---
 
-And hit enter
+## 📦 Requirements
 
-![alt text](image-3.png)
+* Windows
+* Python 3.9+
+* pip
+* Google Chrome (recommended)
 
-If you see something like this, move onto the next step. If you can't, no worries lets just test one more thing.
+---
 
-Lets now check for pip, go ahead and type it in.
-![alt text](image-4.png)
+## ✅ Step 1 — Check Python Installation
 
-If there are no errors and you see a bunch of commands, you are good to go! If not, i'll explain how we can get these on our system.
+Open **Windows PowerShell**
 
+<img src="image.png" width="600" />
 
-HOW TO INSTALL PYTHON
+If you see a terminal like this — perfect:
 
-For windows visit this website
-https://www.python.org/downloads/windows/
+<img src="image-1.png" width="600" />
 
-Should look like this
-![alt text](image-5.png)
+Type:
 
-We are looking for "Download Windows installer (64-bit)"
-![alt text](image-6.png)
+```bash
+python
+```
 
-Go ahead and click it, it'll download something. (make sure to download it to a place you'll remember)
+<img src="image-2.png" width="600" />
 
-![alt text](image-7.png)
+Press Enter.
 
-find your file and run the file by double clicking it
+<img src="image-3.png" width="600" />
 
-![alt text](image-8.png)
+If Python opens, you’re good.
 
-After it opens, you should see this screen. Now here is the important part
-Click "Add to path", this is what will allow us to run the script on the terminal
+Now test pip:
 
-![alt text](image-9.png)
+```bash
+pip
+```
 
-Cool, now you can click "Install Now"
-It will ask for permissions, just click accept and make it happy
+<img src="image-4.png" width="600" />
 
-Keep clicking next until you see a finish screen.
+If commands appear with no errors — continue.
 
-Now open a new terminal and follow the steps above to check if 'python' works.
+---
 
+## 🐍 Installing Python (if missing)
 
-HOW TO INSTALL PIP
+Download Python for Windows:
 
-Now with python installed, its much easier to install pip
+👉 [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
 
-Go to your terminal and type in "python -m ensurepip --upgrade"
+<img src="image-5.png" width="600" />
 
-![alt text](image-10.png)
+Select:
 
-It should end with no errors
+> **Download Windows installer (64-bit)**
 
+<img src="image-6.png" width="600" />
 
-IF YOU ARE READY TO GO!
+Run the installer:
 
-Go to the top of the repo page
+<img src="image-7.png" width="600" />
 
-![alt text](image-11.png)
+<img src="image-8.png" width="600" />
 
-Click on the green 'code' button, then on Local
+### ❗ Important
 
-![alt text](image-12.png)
+✅ **Check “Add Python to PATH”**
 
-Now download the zip
+<img src="image-9.png" width="600" />
 
-![alt text](image-13.png)
+Then click **Install Now**.
 
+After installation, open a new terminal and verify:
 
-Locate the zip file and extract it all
+```bash
+python
+```
 
-![alt text](image-14.png)
+---
 
-Open it up and go inside the folder 'Wordpress-alt-text-generator'
-![alt text](image-15.png)
+## 📥 Install pip (if needed)
 
-Then go to the folder 'scripts'
+Run:
 
-![alt text](image-16.png)
+```bash
+python -m ensurepip --upgrade
+```
 
-If you see these 2 files, YOU ARE GOLDEN!!
+<img src="image-10.png" width="600" />
 
-![alt text](image-17.png)
+No errors = success.
 
+---
 
-The python file is a server that will run an AI model that creates Image captions.
+## 📂 Download the Project
 
-For the Javascript file, you'll need to open it and copy and paste code into the web browser console. We'll get to that in a second.
+At the top of the repository:
 
-For now, lets go back to the parent folder, and then right click the 'scripts' folder
+<img src="image-11.png" width="600" />
 
-![alt text](image-18.png)
+Click **Code → Local → Download ZIP**
 
-We are going to click 'open in terminal'
-![alt text](image-19.png)
+<img src="image-12.png" width="600" />
 
-Now you should see the terminal pulled up with our folder's path, Thats perfect
-![alt text](image-20.png)
+<img src="image-13.png" width="600" />
 
-We can't just run the python file just yet, we need to install some dependences. That is why we have pip
+Extract the ZIP:
 
-Type in 'pip install flask request jsonify pillow transformers'
-![alt text](image-22.png)
+<img src="image-14.png" width="600" />
 
-Also 'python -m pip install flask'
-![alt text](image-25.png)
+Open:
 
+```
+Wordpress-alt-text-generator/
+└── scripts/
+```
 
-Perfect! We are ready to go.
+<img src="image-15.png" width="600" />
+<img src="image-16.png" width="600" />
 
-Now we'll run the python server
+If you see these two files — you're golden:
 
-Just type 'python main.py' and hit enter
-![alt text](image-21.png)
+<img src="image-17.png" width="600" />
 
-You should see something like this now
+* `main.py` → AI caption server
+* `script.js` → Browser automation
 
-![alt text](image-23.png)
+---
 
-We will need to wait for it to download some models, but when its done it should look like
+## 🧪 Install Python Dependencies
 
-![alt text](image-24.png)
+Right‑click the **scripts** folder → **Open in Terminal**
 
-Perfect! Now we can go to wordpress, make sure to have this running in the background
+<img src="image-18.png" width="600" />
+<img src="image-19.png" width="600" />
+<img src="image-20.png" width="600" />
 
+Run:
 
-NOW ON WORDPRESS
+```bash
+pip install flask requests jsonify pillow transformers
+python -m pip install flask
+```
 
+<img src="image-22.png" width="600" />
+<img src="image-25.png" width="600" />
 
-Here is our wordpress admin site
+---
 
-![alt text](image-26.png)
+## ▶️ Start the AI Server
 
-We are going to go to the Media tab, then to the library tab
+```bash
+python main.py
+```
 
-![alt text](image-27.png)
+<img src="image-21.png" width="600" />
 
-Here is all of our fun images, but we need to do 2 things first
-1. filter the images
-2. load all the images
+Model download will begin automatically.
 
-![alt text](image-28.png)
+When finished:
 
+<img src="image-24.png" width="600" />
 
-Go to the top left corner and under 'All media items', select 'images'
-![alt text](image-29.png)
+✅ **Leave this running in the background.**
 
-Let it reload, now scroll down until you see this button
+---
 
-![alt text](image-30.png)
+# 🌐 WordPress Setup
 
-Keep clicking this button and scrolling down and loading more until you have loaded all the images
+## Open Media Library
 
-*This takes a second, but is vital
+<img src="image-26.png" width="600" />
 
-You should see something like this
-![alt text](image-31.png)
+Go to:
 
+**Media → Library**
 
+<img src="image-27.png" width="600" />
 
-OKAY, WE ARE SO CLOSE
+### Filter images only
 
+<img src="image-28.png" width="600" />
+<img src="image-29.png" width="600" />
 
-Open up your dev console, you can also press "Ctrl + Shift + I"
-Please use chrome.... Its so much better
+### Load all images
 
+Scroll down and keep clicking:
 
-![alt text](image-32.png)
+<img src="image-30.png" width="600" />
 
-You can see we have our console opened on the right-hand side.
-We are going to be copy and pasting code into there very soon. 
+⚠️ This step is required.
 
-We just have to install one extention that bypasses some security (don't worry, its all local)
+When done:
 
-Follow this link 
-https://chromewebstore.google.com/detail/cors-unblock/hadoojkfknbjgoppkecpgamiajljiief?hl=en
+<img src="image-31.png" width="600" />
 
-![alt text](image-33.png)
+---
 
-Go ahead and click the blue button to add to chrome.
+## 🧰 Open Developer Console
 
-Now go back to our wordpress page, and click the puzzel peice icon in the upper right corner
-*Mine looks different because I use OperaGX browser
+Press:
 
-![alt text](image-34.png)
+```
+Ctrl + Shift + I
+```
 
-We should see our extention, now click on it
+<img src="image-32.png" width="600" />
 
-You'll see this
-![alt text](image-35.png)
+Use **Chrome** (strongly recommended).
 
-Go ahead and enable it.
+---
 
-NICE, now we can use our javascript code.
+## 🔓 Install CORS Extension
 
-Go back to our scripts folder
+Required for local server access.
 
-![alt text](image-36.png)
+👉 [https://chromewebstore.google.com/detail/cors-unblock/hadoojkfknbjgoppkecpgamiajljiief](https://chromewebstore.google.com/detail/cors-unblock/hadoojkfknbjgoppkecpgamiajljiief)
 
-And open the script.js file to view it, we will need to copy and paste different parts in there.
+<img src="image-33.png" width="600" />
 
+Enable it:
 
-I have it opened in the note text editor
-![alt text](image-37.png)
+<img src="image-34.png" width="600" />
+<img src="image-35.png" width="600" />
 
-Copy this first function, and paste it into the console on our wordpress website
-![alt text](image-38.png)
-![alt text](image-39.png)
+---
 
-Hit enter
+## 📜 JavaScript Setup
 
-Again for the second script
-![alt text](image-40.png)
-![alt text](image-41.png)
+Open `script.js`
 
-Hit enter
+<img src="image-36.png" width="600" />
+<img src="image-37.png" width="600" />
 
-Now are you ready for the magic?
+### Copy & paste into WordPress console:
 
-Here is the last thing.
-Click on the first image in the library
-![alt text](image-42.png)
+1️⃣ First function
 
-You should see this now
-![alt text](image-43.png)
+<img src="image-38.png" width="600" />
+<img src="image-39.png" width="600" />
 
-You need to note 3 things.
-The url
-The Alternative text tab
-and the "right arrow" button
-![alt text](image-44.png)
+Press Enter.
 
-The code only works when these 3 things are present.
+2️⃣ Second function
 
-If the alternative text tab is empty, it will create a new description.
-Otherwise it will skip it if it already has something in it.
+<img src="image-40.png" width="600" />
+<img src="image-41.png" width="600" />
 
-It will also skip it if the image does not render, and will leave a 'blank' in the text field
+Press Enter.
 
-This code moves forward by clicking that right arrow button. When its finished, the right arrow button will grey out automatically.
-From here you will need to turn off the code, as it will basically keep running itself into a wall. 
+---
 
+## ✨ Run the Generator
 
-The descriptions are accurate enough!!
-Just keep the tab open with the python server running, and it'll be finished in a jiffy.
+Click the **first image** in the media library:
 
-Start:
+<img src="image-42.png" width="600" />
+
+You should see:
+
+<img src="image-43.png" width="600" />
+
+Required elements:
+
+* Image URL
+* Alt text field
+* ➡️ Right arrow button
+
+<img src="image-44.png" width="600" />
+
+### Behavior
+
+* Empty alt text → generates description
+* Existing alt text → skipped
+* Broken images → skipped
+* Automatically advances using right arrow
+
+When finished, the arrow will grey out.
+
+---
+
+## ▶️ Start
+
+```js
 runCaptioningLoop()
-![alt text](image-45.png)
+```
 
+<img src="image-45.png" width="600" />
 
-Stop:
+## ⏹ Stop
+
+```js
 stopCaptioning = true;
-![alt text](image-46.png)
+```
 
+<img src="image-46.png" width="600" />
 
-Have fun!!
+---
+
+## 🎉 Done!
+
+Keep the WordPress tab open and the Python server running.
+
+Alt text will be generated automatically — fast and accurate.
+
+Have fun 🚀
