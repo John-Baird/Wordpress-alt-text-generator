@@ -1,3 +1,7 @@
+/*
+
+This is our function, go ahead and copy and paste this FIRST into the console
+
 async function captionCurrentImage() {
     const img = document.getElementsByClassName("details-image")[0];
     const captionDiv = document.querySelector(
@@ -40,7 +44,13 @@ async function captionCurrentImage() {
 }
 
 
-/*
+
+
+====================================================================================================
+
+
+Here is our looping function, copy and paste this SECOND into our console
+
 let stopCaptioning = false;
 
 async function runCaptioningLoop(delay = 2000) {
@@ -53,9 +63,20 @@ async function runCaptioningLoop(delay = 2000) {
 
     console.log("Captioning stopped");
 }
+
+
+====================================================================================================
+
+
+
+These are our 'Command' scripts, we will use them often. After setting the first 2 functions you can run these.
+
+
+*This one starts the loop
 runCaptioningLoop()
 
 
-
+*This one breaks the loop
 stopCaptioning = true;
-*/ 
+
+*/
