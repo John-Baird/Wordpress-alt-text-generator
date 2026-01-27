@@ -31,10 +31,18 @@ async function captionCurrentImage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ img_src })
     });
+    try {
+        const data = await response.json();
+        captionDiv.value = data.caption;
+    } catch (error){
+        console.error(error)
+        console.log("Image may not exist")
+        captionDiv.value = "blank"
+        nextButton.click();
+        return;
+    }
 
-    const data = await response.json();
-
-    captionDiv.value = data.caption;
+   
 
     // Trigger change event if needed
     captionDiv.dispatchEvent(new Event("input", { bubbles: true }));
